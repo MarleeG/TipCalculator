@@ -1,0 +1,3 @@
+To start the local server use the command npm start.
+This project is hosted via Heroku. Please do not use to the Heroku CLI to update any changes to the project.
+If changes are made update them via the GitHub CLI commands
