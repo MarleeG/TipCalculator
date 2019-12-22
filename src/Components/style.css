@@ -7,5 +7,17 @@
 
 .header_title{
     font-family: 'Liu Jian Mao Cao', cursive;
-    font-size: 75px;
+    font-size: 620%;
+}
+
+
+/* Input */
+/* UserInput.js */
+
+.user_input_container{
+    border: 2px solid black;
+}
+.user_input_header{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 310%;
 }
