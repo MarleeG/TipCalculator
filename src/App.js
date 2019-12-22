@@ -46,7 +46,7 @@ class App extends Component {
             </Col>
             <Col xs={12} md={6} lg={6}>
               {/* Tips Component */}
-              <Tips/>
+              <Tips bill={this.state.bill_total}/>
             </Col>
           </Row>
         </Container>
