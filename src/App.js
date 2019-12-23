@@ -19,11 +19,12 @@ class App extends Component {
   }
 
 
-  onSubmit = () => {
-    this.setState({
-      bill_total: 0
-    })
-  }
+  // Submit button - May remove later
+  // onSubmit = () => {
+  //   this.setState({
+  //     bill_total: 0
+  //   })
+  // }
 
   render() {
     return (
@@ -41,7 +42,6 @@ class App extends Component {
               <UserInput
                 bill_total={this.state.bill_total}
                 updateProps={(e) => this.updateProps(e)}
-                onSubmit={() => this.onSubmit()}
                 />
             </Col>
             <Col xs={12} md={6} lg={6}>

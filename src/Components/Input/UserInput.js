@@ -12,13 +12,15 @@ const UserInput = (props) => {
 
             {/* User Input */}
             <Row className='mt-5 mx-auto text-center'>
-                <Col className="mb-3" lg={6}>
-                    <input name='bill_total' value={props.bill_total} onChange={e => props.updateProps(e)}/>
+                <Col className="mb-3" lg={12}>
+                    <input name='bill_total' value={props.bill_total} onChange={e => props.updateProps(e)} />
                 </Col>
 
-                <Col className="mb-3">
-                    <Button variant="success" disabled={props.bill_total <= 0} onClick={() => props.onSubmit()}>Submit</Button>
-                </Col>
+
+                {/* Old submit button w/ onSubmit function*/}
+                {/* <Col className="mb-3"> */}
+                    {/* <Button variant="success" disabled={props.bill_total <= 0} onClick={() => props.onSubmit()}>Submit</Button> */}
+                {/* </Col> */}
             </Row>
         </Container>
     );

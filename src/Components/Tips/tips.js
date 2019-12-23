@@ -40,18 +40,18 @@ const Tips = props => {
                                 <tbody>
                                     <tr>
                                         <td>10%</td>
-                                        <td>{(props.bill * .1)}</td>
-                                        <td>{(props.bill * .1) + parseInt(props.bill)}</td>
+                                        <td>${((props.bill * .1)).toFixed(2)}</td>
+                                        <td>${((props.bill * .1) + parseInt(props.bill)).toFixed(2)}</td>
                                     </tr>
                                     <tr>
                                         <td>15%</td>
-                                        <td>{(props.bill * .15)}</td>
-                                        <td>{(props.bill * .15) + parseInt(props.bill)}</td>
+                                        <td>${((props.bill * .15)).toFixed(2)}</td>
+                                        <td>${((props.bill * .15) + parseInt(props.bill)).toFixed(2)}</td>
                                     </tr>
                                     <tr>
                                         <td>20%</td>
-                                        <td>{(props.bill * .2)}</td>
-                                        <td>{(props.bill * .2) + parseInt(props.bill)}</td>
+                                        <td>${((props.bill * .2)).toFixed(2)}</td>
+                                        <td>${((props.bill * .2) + parseInt(props.bill)).toFixed(2)}</td>
                                     </tr>
                                 </tbody>
                             </Table>
@@ -59,7 +59,10 @@ const Tips = props => {
                     </Row>
 
                     <Row lg={12} md={12} sm={12} xs={12}>
-                        <Button size="lg" variant="dark" className="mx-auto my-3">
+                        <Button 
+                            size="lg" 
+                            variant="dark" 
+                            className="mx-auto my-3">
                             Custom Tip
                         </Button>
 
