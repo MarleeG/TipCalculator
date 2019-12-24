@@ -14,10 +14,18 @@
 /* Input */
 /* UserInput.js */
 
-.user_input_container{
+.component_container{
     border: 2px solid black;
+    border-radius: 5%;
 }
 .user_input_header{
     font-family: 'Permanent Marker', cursive;
     font-size: 310%;
+}
+
+
+/* Tips */
+.bill_total{
+    font-family: 'Liu Jian Mao Cao', cursive;
+    font-size: 300%;
 }

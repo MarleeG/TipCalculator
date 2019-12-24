@@ -4,16 +4,17 @@ import {
     Col,
     Container,
     Table,
-    Button
+    Button,
+    Alert
 } from 'react-bootstrap';
 import "../style.css"
 
 
 const Tips = props => {
     return (
-        <Container className="user_input_container ">
+        <Container className="component_container">
             {/* Tips */}
-            <Row>
+            <Row className="my-3">
                 <h1 className="user_input_header mx-auto">Tips</h1>
             </Row>
 
@@ -21,9 +22,11 @@ const Tips = props => {
             {/* Bill */}
             {props.bill > 0 ?
                 <div>
-                    <Row lg={12} md={12} sm={12} xs={12}>
-                        <Col>
-                            Bill: {props.bill}
+                    <Row lg={12} md={12} sm={12} xs={12} className="text-center">
+                        <Col className="bill_total">
+                            <strong>
+                                Bill: ${props.bill}
+                            </strong>
                         </Col>
                     </Row>
                     <br/>
@@ -68,9 +71,7 @@ const Tips = props => {
 
                     </Row>
                 </div>
-                : null}
-
-
+                : null }
         </Container>
     )
 }

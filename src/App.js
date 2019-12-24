@@ -8,6 +8,7 @@ import Header from './Components/Header';
 class App extends Component {
   state = {
     bill_total: 0,
+    user_validation_message: false
   }
 
   updateProps = event => {
@@ -15,7 +16,14 @@ class App extends Component {
 
     this.setState({
       [name]: value
-    })
+    }, () => {
+
+      if (this.state.bill_total !== 0 || this.state.bill_total < 0 || this.state.bill_total === "") {
+        this.setState({
+          user_validation_message: !this.state.user_validation_message
+        })
+      }
+    });
   }
 
 
@@ -42,11 +50,12 @@ class App extends Component {
               <UserInput
                 bill_total={this.state.bill_total}
                 updateProps={(e) => this.updateProps(e)}
-                />
+                user_validation_message={this.state.user_validation_message}
+              />
             </Col>
             <Col xs={12} md={6} lg={6}>
               {/* Tips Component */}
-              <Tips bill={this.state.bill_total}/>
+              <Tips bill={this.state.bill_total} />
             </Col>
           </Row>
         </Container>
