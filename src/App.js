@@ -15,24 +15,43 @@ class App extends Component {
     showTips: false
   }
 
-  submitBill = (data) => {
-    log(`data: ${data}`);
+  submitBill = (input) => {
+    log(`input: ${input}`);
 
-    this.setState({
-      showTips: true
-    })
+    let user_input = input;
+    log(`user_input: ${typeof (user_input)}`);
+    log(`------------------------------`);
+
+    // 
+    let input_to_num = parseInt(user_input);
+    log(`input_to_num: ${typeof (input_to_num)}`);
+
+    // if input is a number then allow tips to calculate
+    // else display warning message to user for accepted values
+    if (!isNaN(input_to_num)) {
+      this.setState({
+        // this will allow the tips component to calculate the tip percentages
+        showTips: true,
+        user_validation_message: false
+      });
+    }else{
+      this.setState({
+        showTips: false,
+        user_validation_message: true
+      });
+    }
+
   }
 
 
+  // this will update the state of 
+  // the input on UserInput.js file
   updateProps = event => {
     let { name, value } = event.target;
 
     this.setState({
       [name]: value
-    })
-
-    
-
+    });
   }
 
 
@@ -64,17 +83,17 @@ class App extends Component {
                 bill_total={this.state.bill_total}
                 updateProps={(e) => this.updateProps(e)}
                 user_validation_message={this.state.user_validation_message}
-                submitBill={(data) => this.submitBill(data)}
+                submitBill={(input) => this.submitBill(input)}
               />
             </Col>
             <Col xs={12} md={6} lg={6}>
               {/* Tips Component */}
-              <Tips 
+              <Tips
                 bill={this.state.bill_total}
                 onCustomTip={(e) => this.onCustomTip(e)}
                 showCustomOptions={this.state.showCustomOptions}
                 showTips={this.state.showTips}
-                 />
+              />
             </Col>
           </Row>
         </Container>
