@@ -14,5 +14,5 @@ This application was built to allow users to view and customize a tip on a bill 
 - [Google Fonts](https://fonts.google.com/)
 - [Animate.css](https://www.npmjs.com/package/react-animated-css)  
 
-## Deployed App - Example
+## Deployed App
 - [TipCalculator](https://tipcalculator-marleeg.herokuapp.com)
