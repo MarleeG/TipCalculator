@@ -5,7 +5,6 @@ import {
     Container,
     Table,
     Button,
-    Alert
 } from 'react-bootstrap';
 import "../style.css"
 
@@ -20,7 +19,7 @@ const Tips = props => {
 
 
             {/* Bill */}
-            {props.bill > 0 ?
+            {props.bill > 0 && props.showTips?
                 <div>
                     <Row lg={12} md={12} sm={12} xs={12} className="text-center">
                         <Col className="bill_total">
@@ -65,11 +64,23 @@ const Tips = props => {
                         <Button 
                             size="lg" 
                             variant="dark" 
-                            className="mx-auto my-3">
+                            className="mx-auto my-3"
+                            onClick={(e) => props.onCustomTip(e)}>
                             Custom Tip
                         </Button>
-
                     </Row>
+
+
+                    {props.showCustomOptions &&
+                        <Row lg={12} className="my-4">
+                            <Col>
+                                <span>Tesing</span>
+                                <hr/>
+                                <p>Testing purposes</p>
+                            </Col>
+                        </Row> 
+                    }
+                    
                 </div>
                 : null }
         </Container>

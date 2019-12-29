@@ -1,9 +1,9 @@
-body{
+/* body{ */
   /* background-image: url('./images/background/lined_paper.png'); */
   /* background-size:     cover;                      /* <------ */
     /* background-repeat:   no-repeat; */ 
     /* background-position: center center;  */
-}
+/* } */
 
 .App {
   text-align: center;

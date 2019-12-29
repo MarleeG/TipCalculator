@@ -3,10 +3,8 @@ import {
     Row,
     Col,
     Container,
-    Button,
-    InputGroup,
-    FormControl,
-    Alert
+    Alert,
+    Button
 } from 'react-bootstrap';
 import "../style.css";
 
@@ -20,10 +18,18 @@ const UserInput = (props) => {
 
             {/* User Input */}
             <Row className='mt-5 mx-auto text-center'>
-                <Col className="mb-3" lg={12}>
+                <Col className="mb-3" lg={6}>
+                    <label>Enter bill total:</label>
                     <input name='bill_total' value={props.bill_total} onChange={e => props.updateProps(e)} />
+                    {/* <input name='bill_total' value={props.bill_total}/> */}
+
                 </Col>
 
+                <Col lg={6} className='mt-4'>
+                    <Button variant='dark' onClick={() => props.submitBill(props.bill_total)}>
+                        Submit
+                    </Button>
+                </Col>
 
                 <Col lg={12}>
                     {props.user_validation_message ?
